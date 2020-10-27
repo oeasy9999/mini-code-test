@@ -1,6 +1,6 @@
 package org.example.service.impl;
 
-import org.example.constant.DigitsLetter;
+import org.example.constant.DigitsLetterConstant;
 import org.example.enums.ErrorCodeEnum;
 import org.example.exception.CommonRuntimeException;
 import org.example.service.ILetterCombination;
@@ -16,7 +16,7 @@ public class LetterCombinationByTwoDigits implements ILetterCombination {
     @Override
     public String combiningLetters(Integer[] inputArr) {
         ErrorCodeEnum errorCodeEnum = InputValidateUtil.inputValidate(inputArr, 2);
-        if (!"0000".equals(errorCodeEnum.getCode())) {
+        if (!DigitsLetterConstant.SUCCESS_CODE.equals(errorCodeEnum.getCode())) {
             throw new CommonRuntimeException(errorCodeEnum.getCode(), errorCodeEnum.getMessage());
         }
         if (inputArr.length == 1) {
@@ -41,8 +41,8 @@ public class LetterCombinationByTwoDigits implements ILetterCombination {
             tempArrays[1] = inputArr[0] % 10;
         }
         List<String> list = new ArrayList<>();
-        List<String> leftList = DigitsLetter.DIGITS_MAP.get(tempArrays[0]);
-        List<String> rightList = DigitsLetter.DIGITS_MAP.get(tempArrays[1]);
+        List<String> leftList = DigitsLetterConstant.DIGITS_MAP.get(tempArrays[0]);
+        List<String> rightList = DigitsLetterConstant.DIGITS_MAP.get(tempArrays[1]);
         return DigitsLetterUtil.commonCombin(leftList, rightList, list);
     }
 }

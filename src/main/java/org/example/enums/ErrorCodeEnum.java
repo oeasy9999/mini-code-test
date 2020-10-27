@@ -1,14 +1,16 @@
 package org.example.enums;
 
+import org.example.constant.DigitsLetterConstant;
+
 /**
  *  errorcode Enum
  */
 public enum ErrorCodeEnum {
-    SUCCESS("0000", "success"),
-    NULL("E001", "parmameter is null!"),
-    CONTAINS_NULL_VALUE("E002", "parameter contains null value!"),
-    OUT_RANG("E003", "parameter value is out of rang!"),
-    ILLEGAL_VALUE("E004", "parameter contains illegal value!");
+    SUCCESS(DigitsLetterConstant.SUCCESS_CODE, DigitsLetterConstant.SUCCESS_MSG),
+    NULL(DigitsLetterConstant.NULL_CODE, DigitsLetterConstant.NULL_MSG),
+    CONTAINS_NULL_VALUE(DigitsLetterConstant.CONTAINS_NULL_VALUE_CODE, DigitsLetterConstant.CONTAINS_NULL_VALUE_MSG),
+    OUT_RANG(DigitsLetterConstant.OUT_RANG_CODE, DigitsLetterConstant.OUT_RANG_MSG),
+    ILLEGAL_VALUE(DigitsLetterConstant.ILLEGAL_VALUE_CODE, DigitsLetterConstant.ILLEGAL_VALUE_MSG);
 
     private String code;
     private String message;
