@@ -24,4 +24,34 @@ public class DigitsLetterUtil {
         }
         return tempList;
     }
+
+    /**
+     *
+     * @param map
+     * @param arr
+     * @param index
+     * @return
+     */
+    public static String getLetter(Map<Integer, List<String>> map,Integer[] arr, int[] index){
+        StringBuilder letter = new StringBuilder();
+        for (int i = 0; i < index.length; i++) {
+            letter.append(map.get(arr[i]).get(index[i]));
+        }
+        return letter.toString();
+    }
+
+    /**
+     *
+     * @param bit
+     * @param n
+     * @return
+     */
+    public static int[] getIndex(int[] bit, int n){
+        int[] index = new int[bit.length];
+        for (int i = bit.length -1; i >= 0 ; i--) {
+            index[i] = n % bit[i];
+            n /= bit[i];
+        }
+        return index;
+    }
 }

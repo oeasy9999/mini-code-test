@@ -22,10 +22,17 @@ public class LetterCombinationByOneDigitTest {
     }
 
     @Test
-    public void testMultiElementToLetterCombination() {
+    public void testTwoElementToLetterCombination() {
         String result1 = letterCombination.combiningLetters(new Integer[]{2, 3});
         String expect1 = "ad ae af bd be bf cd ce cf";
         Assert.assertEquals(result1, expect1);
+    }
+
+    @Test
+    public void testThreeElementToLetterCombination() {
+        String result = letterCombination.combiningLetters(new Integer[]{2, 3, 4});
+        String expect = "adg adh adi aeg aeh aei afg afh afi bdg bdh bdi beg beh bei bfg bfh bfi cdg cdh cdi ceg ceh cei cfg cfh cfi";
+        Assert.assertEquals(result, expect);
     }
 
     @Test
@@ -70,10 +77,4 @@ public class LetterCombinationByOneDigitTest {
         letterCombination.combiningLetters(new Integer[]{12});
     }
 
-    @Test
-    public void testOutRangException() {
-        thrown.expect(CommonRuntimeException.class);
-        thrown.expectMessage("parameter value is out of rang!");
-        letterCombination.combiningLetters(new Integer[]{1, 2, 3});
-    }
 }

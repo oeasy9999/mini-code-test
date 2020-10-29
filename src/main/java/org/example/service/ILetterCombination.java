@@ -17,5 +17,5 @@ public interface ILetterCombination {
      * @param inputArr      digits of input
      * @return              preprocessed data
      */
-    List<String> preprocessData(Integer[] inputArr);
+    Integer[] preprocessData(Integer[] inputArr);
 }

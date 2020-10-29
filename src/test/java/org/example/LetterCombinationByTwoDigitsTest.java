@@ -22,7 +22,7 @@ public class LetterCombinationByTwoDigitsTest {
     }
 
     @Test
-    public void testMultiElementToLetterCombination() {
+    public void testTwoElementToLetterCombination() {
         String result2 = letterCombination.combiningLetters(new Integer[]{12, 34});
         String expect2 = "adg adh adi aeg aeh aei afg afh afi bdg bdh bdi beg beh bei bfg bfh bfi cdg cdh cdi ceg ceh cei cfg cfh cfi";
         Assert.assertEquals(result2, expect2);
@@ -57,6 +57,13 @@ public class LetterCombinationByTwoDigitsTest {
     }
 
     @Test
+    public void testThreeElementToLetterCombination() {
+        String result4 = letterCombination.combiningLetters(new Integer[]{12, 34, 56});
+        String expect4 = "adgjm adgjn adgjo adgkm adgkn adgko adglm adgln adglo adhjm adhjn adhjo adhkm adhkn adhko adhlm adhln adhlo adijm adijn adijo adikm adikn adiko adilm adiln adilo aegjm aegjn aegjo aegkm aegkn aegko aeglm aegln aeglo aehjm aehjn aehjo aehkm aehkn aehko aehlm aehln aehlo aeijm aeijn aeijo aeikm aeikn aeiko aeilm aeiln aeilo afgjm afgjn afgjo afgkm afgkn afgko afglm afgln afglo afhjm afhjn afhjo afhkm afhkn afhko afhlm afhln afhlo afijm afijn afijo afikm afikn afiko afilm afiln afilo bdgjm bdgjn bdgjo bdgkm bdgkn bdgko bdglm bdgln bdglo bdhjm bdhjn bdhjo bdhkm bdhkn bdhko bdhlm bdhln bdhlo bdijm bdijn bdijo bdikm bdikn bdiko bdilm bdiln bdilo begjm begjn begjo begkm begkn begko beglm begln beglo behjm behjn behjo behkm behkn behko behlm behln behlo beijm beijn beijo beikm beikn beiko beilm beiln beilo bfgjm bfgjn bfgjo bfgkm bfgkn bfgko bfglm bfgln bfglo bfhjm bfhjn bfhjo bfhkm bfhkn bfhko bfhlm bfhln bfhlo bfijm bfijn bfijo bfikm bfikn bfiko bfilm bfiln bfilo cdgjm cdgjn cdgjo cdgkm cdgkn cdgko cdglm cdgln cdglo cdhjm cdhjn cdhjo cdhkm cdhkn cdhko cdhlm cdhln cdhlo cdijm cdijn cdijo cdikm cdikn cdiko cdilm cdiln cdilo cegjm cegjn cegjo cegkm cegkn cegko ceglm cegln ceglo cehjm cehjn cehjo cehkm cehkn cehko cehlm cehln cehlo ceijm ceijn ceijo ceikm ceikn ceiko ceilm ceiln ceilo cfgjm cfgjn cfgjo cfgkm cfgkn cfgko cfglm cfgln cfglo cfhjm cfhjn cfhjo cfhkm cfhkn cfhko cfhlm cfhln cfhlo cfijm cfijn cfijo cfikm cfikn cfiko cfilm cfiln cfilo";
+        Assert.assertEquals(result4, expect4);
+    }
+
+    @Test
     public void testNullException() {
         thrown.expect(CommonRuntimeException.class);
         thrown.expectMessage("parmameter is null!");
@@ -77,10 +84,4 @@ public class LetterCombinationByTwoDigitsTest {
         letterCombination.combiningLetters(new Integer[]{123});
     }
 
-    @Test
-    public void testOutRangException() {
-        thrown.expect(CommonRuntimeException.class);
-        thrown.expectMessage("parameter value is out of rang!");
-        letterCombination.combiningLetters(new Integer[]{12, 23, 3});
-    }
 }

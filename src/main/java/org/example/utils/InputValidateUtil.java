@@ -7,7 +7,6 @@ import java.util.List;
 import static org.example.enums.ErrorCodeEnum.CONTAINS_NULL_VALUE;
 import static org.example.enums.ErrorCodeEnum.ILLEGAL_VALUE;
 import static org.example.enums.ErrorCodeEnum.NULL;
-import static org.example.enums.ErrorCodeEnum.OUT_RANG;
 import static org.example.enums.ErrorCodeEnum.SUCCESS;
 
 public class InputValidateUtil {
@@ -25,14 +24,13 @@ public class InputValidateUtil {
         if (null == input || input.length == 0) {
             return NULL;
         }
-        if (input.length > 2) {
-            return OUT_RANG;
-        }
 
         for (Integer i : input) {
             if (null == i) {
                 return CONTAINS_NULL_VALUE;
-            } else if (i > sizeTable[size - 1] || i < 0) {
+            }
+
+            if (i > sizeTable[size - 1] || i < 0) {
                 return ILLEGAL_VALUE;
             }
         }

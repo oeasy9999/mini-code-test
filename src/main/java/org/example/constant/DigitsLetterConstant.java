@@ -39,10 +39,6 @@ public class DigitsLetterConstant {
      */
     public static final String CONTAINS_NULL_VALUE_CODE = "E002";
     /**
-     *  rsponse code : E003
-     */
-    public static final String OUT_RANG_CODE = "E003";
-    /**
      *  rsponse code : E004
      */
     public static final String ILLEGAL_VALUE_CODE = "E004";
@@ -58,10 +54,7 @@ public class DigitsLetterConstant {
      *  rsponse msg : parameter contains null value!
      */
     public static final String CONTAINS_NULL_VALUE_MSG = "parameter contains null value!";
-    /**
-     *  rsponse msg : parameter value is out of rang!
-     */
-    public static final String OUT_RANG_MSG = "parameter value is out of rang!";
+
     /**
      *  rsponse msg : parameter contains illegal value!
      */
